@@ -1,0 +1,121 @@
+% !TeX spellcheck = en_US
+\documentclass[ngerman,a4paper,order=firstname]{mathscript}
+\usepackage{mathoperators}
+\usepackage{todonotes}
+
+% % % local commands
+\DeclareMathOperator{\Ad}{Ad}				% Adjoint
+\DeclareMathOperator{\PSL}{PSL} 			% projective linear group 
+\newcommand{\with}{\text{ with }}
+\newcommand{\nd}{\text{ and }}
+\newcommand{\for}{\text{ for }}
+\renewcommand{\rhd}{\triangleright}
+\renewcommand{\lhd}{\triangleleft} 			% normal subgroups
+\DeclareMathOperator{\Set}{Set}				% Category of sets
+\newcommand{\cat}{\mathcal C}				% some category
+\DeclareMathOperator{\Vect}{Vect}			% Category of vector spaces
+\DeclareMathOperator{\Grp}{Grp}				% Category of groups
+\DeclareMathOperator{\QVect}{QVect}			% Cat of quasi vector bundles
+\DeclareMathOperator{\Mod}{Mod}				% Cat of moduls
+\newcommand{\EE}{\mathscr E}				% some cat E
+\DeclareMathOperator{\Ann}{Ann}				% annihilator
+\DeclareMathOperator{\morph}{Morph}				% cat of morphs
+\newcommand{\Circlearrowleft}{\mathbin{\rotatebox[origin=c]{180}{$\circlearrowright$}}}
+\DeclareMathOperator{\Cl}{Cl}				% conjugation class of something.
+\renewcommand{\phi}{\varphi}				% always varphi for phi
+\DeclareMathOperator{\Iso}{Iso}				% set of isomorphisms
+\DeclareMathOperator{\Lin}{\mathscr L}		% set of continuous linear maps from V to W
+\newcommand{\hset}[3]{\mathrm{H}^{#1}(#2;#3)} % set of equivalent cocycles over X
+\newcommand{\isoset}[3]{\Phi^{#1}_{#2}(#3)} % isomorphism class of - F vector bundles
+\DeclareMathOperator{\Open}{Open}				% inclusion category for presheafs
+\newcommand{\presheaf}{\mathcal S}			% presheaf
+
+% % % % color note stuff
+%\newcommand{\marganote}[1]{\textcolor{gray}{#1}}
+%\newcommand{\fehmnote}[1]{\textcolor{red}{#1}}
+\newcommand{\scyllanote}[1]{\textcolor{blue}{#1}}
+
+% Nice looking emptyset
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+% get this stupid arrows:
+%\usepackage{mathabx,graphicx}  % ---> add to mathoperators
+%\def\Circlearrowleft{\ensuremath{%
+%		\rotatebox[origin=c]{180}{$\circlearrowleft$}}}
+%\def\Circlearrowright{\ensuremath{%
+%		\rotatebox[origin=c]{180}{$\circlearrowright$}}}
+%\def\CircleArrowleft{\ensuremath{%
+%		\reflectbox{\rotatebox[origin=c]{180}{$\circlearrowleft$}}}}
+%\def\CircleArrowright{\ensuremath{%
+%		\reflectbox{\rotatebox[origin=c]{180}{$\circlearrowright$}}}}
+%\begin{document}
+%	\Huge
+%	$\circlearrowleft \circlearrowright $
+%	
+%	$\Circlearrowleft \Circlearrowright $
+%	
+%	$\CircleArrowleft \CircleArrowright $
+
+% % % local packages
+\usepackage{braids}
+
+\newlist{remarkenum}{enumerate}{1}
+\setlist[remarkenum]{label=(\alph*),ref=\theremark~(\alph*)}
+\crefalias{remarkenumi}{remark}
+
+\newlist{propenum}{enumerate}{1}
+\setlist[propenum]{label=(\alph*),ref=\theproposition~(\alph*)}
+\crefalias{propenumi}{proposition}
+
+\newlist{expenum}{enumerate}{1}
+\setlist[expenum]{label=(\alph*),ref=\theexample~(\alph*)}
+\crefalias{expenumi}{example}
+
+\newlist{lemmaenum}{enumerate}{1}
+\setlist[lemmaenum]{label=(\alph*),ref=\thelemma~(\alph*)}
+\crefalias{lemmaenumi}{lemma}
+
+\newlist{defenum}{enumerate}{1}
+\setlist[defenum]{label=(\roman*),ref=\thedefinition~(\roman*)}
+\crefalias{defenumi}{definition}
+
+\newlist{theoenum}{enumerate}{1}
+\setlist[theoenum]{label=(\roman*),ref=\thedefinition~(\roman*)}
+\crefalias{theoenumi}{theorem}
+
+\title{\textbf{Notes: Homology Theory by James Vick}}
+\author{ScyllaHide}
+
+\begin{document}
+\pagenumbering{roman}
+\pagestyle{plain}
+
+\maketitle
+
+\hypertarget{tocpage}{}
+\tableofcontents
+\bookmark[dest=tocpage,level=1]{Inhaltsverzeichnis}
+
+\pagebreak
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+\chapter*{Preface}
+\input{./TeX_files/Vorwort}
+\chapter{Vector Bundles}
+\input{./TeX_files/chap1}
+
+\part*{Anhang}
+\addcontentsline{toc}{part}{Anhang}
+\appendix
+
+\nocite{*}
+%\bibliography{literatur}
+%\bibliographystyle{acm}
+
+%\printglossary[type=\acronymtype]
+
+\printindex
+
+\end{document}
