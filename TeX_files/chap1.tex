@@ -1,15 +1,51 @@
 % !TeX spellcheck = en_US
-\section{Singular Homology Theory}
-Here we will introduce the singular homology theory of an arbitrary topological space. The ultimate goal is the \person{Mayer}-\person{Vietoris} sequence and a few applications like \person{Brouwer}-Theorem and nonretractibility of a disk onto its boundary.
+%\section{Singular Homology Theory}
+Here we will introduce the singular homology theory of arbitrary topological space. The ultimate goal is the \person{Mayer}-\person{Vietoris} sequence and a few applications like \person{Brouwer}-Theorem and nonretractibility of a disk onto its boundary.\\
 So lets start with a few definitions
-\begin{definition}
-	We are in $\Rn$ and $x,y \Rn$ are points. Lets define a few things
+\begin{*definition}
+	We are in $\Rn$ and $x,y \in \Rn$ are points. Lets define a few things
 	\begin{enumerate}
-		\item \begriff{segment}
-		\item \begriff{convex}
+		\item (line)-\begriff{segment} from $x$ to $y$ to be $\set{(1-t)x + ty \mid t \in [0,1]}$
+		\item (a subset) $C \subseteq \Rn$ is \begriff{convex} 
+		\item \begriff{convex hull}
+		\item \begriff{$p$-simplex} $s$
 	\end{enumerate}
-\end{definition}
+\end{*definition}
 \todo[inline]{Okay thats worth a proof!}
 \begin{*remark}
-	Thats crucial here, but need to show that $\bigcap$ of all convex sets in $\Rn$ which contain $A$ are again convex.
+	\scyllanote{
+	\begin{itemize}
+		\item Thats crucial here, but need to show that $\bigcap$ of all convex sets in $\Rn$ which contain $A$ are again convex (We can write this as $\CC$ the family of convex sets of $\Rn$). (in the sense of a vector space not as a ordered set)
+		\item We mean \ul{affinely independent} here, where the field elements (here $\R$) satisfy 
+		\begin{align*}
+			\sum s_i = 1
+		\end{align*}
+		this all ccould come from barycentric coordinates?!
+		\end{itemize}
+	}
 \end{*remark}
+So lets prove this little remark.
+\begin{proof} % compare https://proofwiki.org/wiki/Intersection_of_Convex_Sets_is_Convex_Set_(Vector_Spaces)
+	\scyllanote{Let $x,y \in \bigcap \CC$. Then we can use the definition of set intersection and get $\forall C \in \CC \colon x,y \in C$. Since all $C$ are convex we have
+	\begin{align*}
+		\for t \in [0,1] \colon (t-y)x + ty \in C.
+	\end{align*}
+	Therefore follows that also the elements in $\bigcap \CC$ are convex by set intersection. Hence $\bigcap \CC$ is convex.}
+\end{proof}
+\begin{proposition}[``connects'' linearly independent and affinely independent]
+	Let $\set{x_0, \dots, x_p} \subseteq \Rn$. Then are equivalent:
+	\begin{propenum}
+		\item $x_1 - x_0, \dots, x_p - x_0$ are linearly independent,
+		\item if $\sum s_i x_i = \sum t_i x_i$ and $s_i = t_i$, then $s_i = t_i$ for $i \in \set{0,\dots,p}$
+	\end{propenum}
+\end{proposition}
+\begin{proof}
+	Okay we have the set of points $\set{x_0, \dots, x_p}\subseteq \Rn$.
+	\begin{itemize}
+		\item $2. \implies 1.$: We know that $\sum t_i x_i = \sum s_i x_i$, so $\sum s_i = \sum t_i$ implies $s_i = t_i$ and this holds for all $i \in [p]$. So we get that 
+		\begin{align*}
+			\sum (s_i - t_i) x_i = 0 \with i \in [p]
+		\end{align*}
+		This is the definition of linearly independent. If i take an element in a linearly independent set away, the set is still linearly independent? Okayy there is something wrong still? What was the definition of lin. indep? again?!
+	\end{itemize}
+\end{proof}
