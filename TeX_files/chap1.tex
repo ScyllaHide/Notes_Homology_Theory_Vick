@@ -6,9 +6,9 @@ So lets start with a few definitions
 	We are in $\Rn$ and $x,y \in \Rn$ are points. Lets define a few things
 	\begin{enumerate}
 		\item (line)-\begriff{segment} from $x$ to $y$ to be $\set{(1-t)x + ty \mid t \in [0,1]}$
-		\item (a subset) $C \subseteq \Rn$ is \begriff{convex} 
-		\item \begriff{convex hull}
-		\item \begriff{$p$-simplex} $s$
+		\item (a subset) $C \subseteq \Rn$ is \begriff{convex}, $x,y \in C$, the segements from $x,y$ is lies entirely in $C$.
+		\item Let $A \subseteq \Rn$, \begriff{convex hull} of $A$ is the intersection of all sets in $\Rn$, which contains $A$.
+		\item \begriff{$p$-simplex} $s$ is the convex hull of a collection of $(p+1)$ points $\set{x_0, \dots, x_p}$
 	\end{enumerate}
 \end{*definition}
 \todo[inline]{Okay thats worth a proof!}
@@ -20,7 +20,8 @@ So lets start with a few definitions
 		\begin{align*}
 			\sum s_i = 1
 		\end{align*}
-		this all ccould come from barycentric coordinates?!
+		this all could come from barycentric coordinates?!
+		\item Should $p$ be not greater than $n$? At least when we compare to Croom's Basics Concepts of Algebraic Topology 7.4 Singular Homology. 
 		\end{itemize}
 	}
 \end{*remark}
